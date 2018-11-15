@@ -26,7 +26,7 @@ describe('handlers', () => {
   });
 
   describe('nameValueHandler', () => {
-    it('uses the defauly keys to to update the state', () => {
+    it('uses the default keys to to update the state', () => {
       // Arrange
       const expected = Immutable({ email: 'test@email.com' });
 
