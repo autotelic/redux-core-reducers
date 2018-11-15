@@ -15,8 +15,8 @@ describe('handlers', () => {
     payload = {
       name: 'email',
       value: 'test@email.com',
-      otherName: 'password',
-      otherValue: 'top-secret',
+      otherName: 'testName',
+      otherValue: 'tests',
     };
 
     keys = {
@@ -39,7 +39,7 @@ describe('handlers', () => {
 
     it('uses the provided keys to to update the state if provided', () => {
       // Arrange
-      const expected = Immutable({ password: 'top-secret' });
+      const expected = Immutable({ testName: 'tests' });
 
       // Act
       const actual = nameValueHandler(state, payload, keys);

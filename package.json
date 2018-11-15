@@ -1,7 +1,7 @@
 {
   "name": "@autotelic/redux-core-reducers",
   "version": "0.1.0",
-  "description": "A collection of re-usable and configurable reducers redux applications",
+  "description": "A collection of re-usable and configurable reducers for redux applications",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint src",
