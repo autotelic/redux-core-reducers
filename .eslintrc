@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "airbnb-base",
+    "plugin:flowtype/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "mocha": true,
+    "node": true,
+    "es6": true
+  },
+  "plugins": [
+    "flowtype"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "function-paren-newline": [
+      "error",
+      "consistent"
+    ],
+    "flowtype/require-valid-file-annotation": [
+      2,
+      "always"
+    ]
+  }
+}
