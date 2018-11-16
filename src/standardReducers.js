@@ -4,6 +4,7 @@ import Immutable from 'seamless-immutable';
 import {
   nameValueHandler,
   mergePayloadHandler,
+  replacePayloadHandler,
 } from './handlers';
 
 type ActionType = Array<string> | string;
@@ -69,3 +70,14 @@ export const createNameValueReducer = createStandardReducer(nameValueHandler);
  * @return {Function} mergePayloadReducer  The configured merge payload reducer.
  */
 export const createMergePayloadReducer = createStandardReducer(mergePayloadHandler);
+
+/**
+ * Creates a reducer that replaces the state with a payload.
+ *
+ * @param  {Array | String} typeOrTypes  The action(s) that the reducer will operate on.
+ *
+ * @param  {Object} initialState  The intitial state shape.
+ *
+ * @return {Function} replacePayloadreducer  The configured replace payload reducer.
+ */
+export const createReplacePayloadReducer = createStandardReducer(replacePayloadHandler);

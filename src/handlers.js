@@ -12,3 +12,8 @@ export const nameValueHandler = (state: {}, payload: {}, keys?: {}) => {
 
 /* State handler that merges a state with a payload. */
 export const mergePayloadHandler = (state: {}, payload: {}) => Immutable.merge(state, payload);
+
+/* State handler that replaces state with a payload */
+export const replacePayloadHandler = (state, payload) => (
+  Immutable.replace(state, payload, { deep: true })
+);
