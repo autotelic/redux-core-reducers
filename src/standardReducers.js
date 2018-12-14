@@ -24,7 +24,7 @@ type Action = {
  * @return {Function} Generic reducer function. Receives action type (string) or types (array)
  * and an initial state.
  */
-export const createStandardReducer = (stateHandler: ({}, {}, any) => {}) => (
+export const createStandardReducer = (stateHandler: ({}, {}, {}, any) => {}) => (
   function initialize(
     typeOrTypes: ActionType,
     initialState: {} = Immutable({}),
@@ -34,9 +34,15 @@ export const createStandardReducer = (stateHandler: ({}, {}, any) => {}) => (
       ? typeOrTypes
       : [typeOrTypes];
     return function standardReducer(state: {} = initialState, action: Action) {
-      if (types.includes(action.type)) {
-        if (action.payload !== undefined) {
-          return stateHandler(state, action.payload, additionalArgs);
+      const {
+        type,
+        payload,
+        meta,
+      } = action;
+
+      if (types.includes(type)) {
+        if (payload !== undefined) {
+          return stateHandler(state, payload, meta, additionalArgs);
         }
         return initialState;
       }

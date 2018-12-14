@@ -4,7 +4,7 @@ import Immutable from 'seamless-immutable';
 import get from 'lodash.get';
 
 /* State handler that sets name / value pairs. */
-export const nameValueHandler = (state: {}, payload: {}, keys?: {}) => {
+export const nameValueHandler = (state: {}, payload: {}, meta: {}, keys?: {}) => {
   const nameKey = get(keys, ['name'], 'name');
   const valueKey = get(keys, ['value'], 'value');
   return Immutable.set(state, payload[nameKey], payload[valueKey]);
@@ -14,6 +14,6 @@ export const nameValueHandler = (state: {}, payload: {}, keys?: {}) => {
 export const mergePayloadHandler = (state: {}, payload: {}) => Immutable.merge(state, payload);
 
 /* State handler that replaces state with a payload */
-export const replacePayloadHandler = (state, payload) => (
+export const replacePayloadHandler = (state: {}, payload: {}) => (
   Immutable.replace(state, payload, { deep: true })
 );

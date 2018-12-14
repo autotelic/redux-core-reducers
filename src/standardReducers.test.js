@@ -34,6 +34,7 @@ describe('standard reducers', () => {
           name: 'email',
           value: 'should@update.com',
         },
+        meta: { async: true },
       };
       standardReducer = createStandardReducer(spy);
     });
@@ -83,7 +84,7 @@ describe('standard reducers', () => {
         expect(actual).to.deep.equal(providedState);
       });
 
-      it('calls the handler with the state, action payload and additionalArgs', () => {
+      it('calls the handler with the state, action payload, meta and additionalArgs', () => {
         // Arrange
         const additionalArgs = { arg1: 1, arg2: 2 };
         // Arrange
@@ -96,6 +97,7 @@ describe('standard reducers', () => {
         expect(spy.calledWithExactly(
           providedState,
           singleAction.payload,
+          singleAction.meta,
           additionalArgs,
         ));
       });

@@ -10,6 +10,7 @@ import {
 describe('handlers', () => {
   let state;
   let payload;
+  let meta;
   let keys;
 
   beforeEach(() => {
@@ -21,6 +22,8 @@ describe('handlers', () => {
       otherName: 'testName',
       otherValue: 'tests',
     };
+
+    meta = {};
 
     keys = {
       name: 'otherName',
@@ -45,7 +48,7 @@ describe('handlers', () => {
       const expected = Immutable({ testName: 'tests' });
 
       // Act
-      const actual = nameValueHandler(state, payload, keys);
+      const actual = nameValueHandler(state, payload, meta, keys);
 
       // Assert
       expect(expected).to.eql(actual);
