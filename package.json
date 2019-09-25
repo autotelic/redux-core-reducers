@@ -43,7 +43,7 @@
     "eslint-plugin-import": "^2.14.0",
     "flow-bin": "^0.86.0",
     "jsdoc": "^3.6.3",
-    "mocha": "^5.2.0",
+    "mocha": "^6.2.0",
     "rimraf": "^2.5.2",
     "sinon": "^7.1.1",
     "watch": "^0.17.1"
