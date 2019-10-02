@@ -46,7 +46,7 @@
     "mocha": "^5.2.0",
     "rimraf": "^2.5.2",
     "sinon": "^7.1.1",
-    "watch": "^0.17.1"
+    "watch": "^1.0.2"
   },
   "npmName": "redux-core-reducers",
   "npmFileMap": [
