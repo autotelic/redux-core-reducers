@@ -114,7 +114,7 @@ const replacePayloadReducerMultipleActions = createReplacePayloadReducer(
 
 #### createMergePayloadReducer
 
-Replaces an action payload with the existing state (uses seamless-immutable replace).
+Merges an action payload with the existing state (uses seamless-immutable merge).
 
 ```js
 import Immutable from 'seamless-immutable';
