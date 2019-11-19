@@ -3,6 +3,8 @@ A collection of re-usable and configurable reducers for redux applications.
 
 This package exports a number of helper methods for creating simple redux reducers. It is quite a small library so you may find it helpful to read the source code to understand exactly what is happening under the hood.
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 ## Installation
 
 `yarn add @autotelic/redux-core-reducers`

@@ -9,7 +9,8 @@
     "build": "rimraf lib && babel src --out-dir lib",
     "build:watch": "watch 'npm run build' ./src/",
     "prepublish": "npm run build",
-    "test": "mocha --require @babel/register './src/**/*.test.js' --recursive"
+    "test": "mocha --require @babel/register './src/**/*.test.js' --recursive",
+    "commit": "git-cz"
   },
   "babel": {
     "presets": [
@@ -37,11 +38,14 @@
     "@babel/register": "^7.0.0",
     "babel-eslint": "^10.0.1",
     "chai": "^4.2.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-flowtype": "^4.3.0",
     "eslint-plugin-import": "^2.14.0",
     "flow-bin": "^0.112.0",
+    "husky": "^3.1.0",
     "jsdoc": "^3.6.3",
     "mocha": "^6.2.1",
     "rimraf": "^2.5.2",
@@ -57,5 +61,17 @@
         "*.js"
       ]
     }
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test && npm run lint",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  }
 }
+
