@@ -133,6 +133,29 @@ const mergePayloadReducerMultipleActions = createMergePayloadReducer(
 );
 ```
 
+#### createMergePayloadReducer
+
+Removes entries from a state object where the key matches the payload Payload may be an
+Array of strings or a string to be compared against the state objects keys.
+(uses seamless-immutable `without`).
+
+```js
+import Immutable from 'seamless-immutable';
+import { createWithoutPayloadReducer } from '@autotelic/redux-core-reducers';
+
+const defaultState = Immutable({});
+
+const mergePayloadReducer = createWithoutPayloadReducer('SOME_ACTION', defaultState);
+
+const mergePayloadReducerMultipleActions = createWithoutPayloadReducer(
+  [
+    'SOME_ACTION',
+    'ANOTHER_ACTION,',
+  ],
+  defaultState,
+);
+```
+
 #### createNameValueReducer
 
 Creates a reducer that takes an action that has a payload containing name and value

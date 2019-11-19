@@ -5,6 +5,7 @@ import {
   nameValueHandler,
   mergePayloadHandler,
   replacePayloadHandler,
+  withoutPayloadHander,
 } from './handlers';
 
 type ActionType = Array<string> | string;
@@ -84,6 +85,18 @@ export const createMergePayloadReducer = createStandardReducer(mergePayloadHandl
  *
  * @param  {Object} initialState  The intitial state shape.
  *
- * @return {Function} replacePayloadreducer  The configured replace payload reducer.
+ * @return {Function} replacePayloadReducer  The configured replace payload reducer.
  */
 export const createReplacePayloadReducer = createStandardReducer(replacePayloadHandler);
+
+/**
+ * Creates a reducer that removes entries from a state object where the keys match the value
+ * of the payload. Payload may be an Array of strings or a string.
+ *
+ * @param  {Array | String} typeOrTypes  The action(s) that the reducer will operate on.
+ *
+ * @param  {Object} initialState  The intitial state shape.
+ *
+ * @return {Function} withoutPayloadReducer  The configured replace payload reducer.
+ */
+export const createWithoutPayloadReducer = createStandardReducer(withoutPayloadHander);
