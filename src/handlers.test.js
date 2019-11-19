@@ -5,6 +5,7 @@ import Immutable from 'seamless-immutable';
 import {
   nameValueHandler,
   replacePayloadHandler,
+  withoutPayloadHander,
 } from './handlers';
 
 describe('handlers', () => {
@@ -75,6 +76,33 @@ describe('handlers', () => {
       it(t.desc, () => {
         // Act
         const actual = replacePayloadHandler(t.state, t.payload);
+
+        // Assert
+        expect(actual).to.eql(t.expected);
+      });
+    });
+  });
+
+  describe('withoutPayloadHander', () => {
+    const tests = [
+      {
+        desc: 'Removes the key matching the string payload value',
+        state: Immutable({ test: 'state', second: 'value', third: 'value' }),
+        payload: 'third',
+        expected: { test: 'state', second: 'value' },
+      },
+      {
+        desc: 'Removes the keys matching the values in the payload array',
+        state: Immutable({ test: 'state', second: 'value', third: 'value' }),
+        payload: ['test', 'second'],
+        expected: { third: 'value' },
+      },
+    ];
+
+    tests.forEach((t) => {
+      it(t.desc, () => {
+        // Act
+        const actual = withoutPayloadHander(t.state, t.payload);
 
         // Assert
         expect(actual).to.eql(t.expected);

@@ -17,3 +17,7 @@ export const mergePayloadHandler = (state: {}, payload: {}) => Immutable.merge(s
 export const replacePayloadHandler = (state: {}, payload: {}) => (
   Immutable.replace(state, payload, { deep: true })
 );
+
+export const withoutPayloadHander = (state: {}, payload: Array<string> | string) => (
+  Immutable.without(state, payload)
+);
