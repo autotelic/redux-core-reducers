@@ -135,7 +135,7 @@ const mergePayloadReducerMultipleActions = createMergePayloadReducer(
 );
 ```
 
-#### createMergePayloadReducer
+#### createWithoutPayloadReducer
 
 Removes entries from a state object where the key matches the payload Payload may be an
 Array of strings or a string to be compared against the state objects keys.
@@ -147,9 +147,9 @@ import { createWithoutPayloadReducer } from '@autotelic/redux-core-reducers';
 
 const defaultState = Immutable({});
 
-const mergePayloadReducer = createWithoutPayloadReducer('SOME_ACTION', defaultState);
+const withoutPayloadReducer = createWithoutPayloadReducer('SOME_ACTION', defaultState);
 
-const mergePayloadReducerMultipleActions = createWithoutPayloadReducer(
+const withoutPayloadReducerMultipleActions = createWithoutPayloadReducer(
   [
     'SOME_ACTION',
     'ANOTHER_ACTION,',
