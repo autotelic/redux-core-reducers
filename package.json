@@ -50,7 +50,7 @@
     "mocha": "^6.2.1",
     "rimraf": "^2.5.2",
     "semantic-release": "^15.13.31",
-    "sinon": "^7.1.1",
+    "sinon": "^8.0.2",
     "watch": "^1.0.2"
   },
   "npmName": "redux-core-reducers",
