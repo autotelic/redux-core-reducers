@@ -44,7 +44,7 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-flowtype": "^4.3.0",
     "eslint-plugin-import": "^2.14.0",
-    "flow-bin": "^0.113.0",
+    "flow-bin": "^0.115.0",
     "husky": "^3.1.0",
     "jsdoc": "^3.6.3",
     "mocha": "^6.2.1",
